@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
           itemsDesktopSmall : [900,1], // betweem 900px and 601px
           itemsTablet: [600,1], //2 items between 600 and 0
           itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-          
+           
       });
 
 
@@ -51,7 +51,6 @@ jQuery(document).ready(function($) {
           
         });
 
-
         $('.tabgroup > div').hide();
         $('.tabgroup > div:first-of-type').show();
         $('.tabs a').click(function(e){
@@ -66,8 +65,6 @@ jQuery(document).ready(function($) {
         $(target).show();
       
         })
-
-
 
         $(".pop-button").click(function () {
             $(".pop").fadeIn(300);
@@ -98,4 +95,27 @@ jQuery(document).ready(function($) {
 
 
 
+});
+
+const filterContainer = document.querySelector(".gallery-filter"),
+galleryItems = document.querySelectorAll(".gallery-item");
+
+filterContainer.addEventListener("click", (event) =>{
+    if(event.target.classList.contains("filter-item")){
+        // deactivate existing active 'filter-item'
+        filterContainer.querySelector(".active").classList.remove("active");
+        // activate new 'filter-item'
+        event.target.classList.add("active");
+        const filterValue = event.target.getAttribute("data-filter");
+        galleryItems.forEach((item) =>{
+        if(item.classList.contains(filterValue) || filterValue === 'all'){
+            item.classList.remove("hide");
+            item.classList.add("show");
+        }
+        else{
+            item.classList.remove("show");
+            item.classList.add("hide");
+        }
+        });
+    }
 });
