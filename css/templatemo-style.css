@@ -944,7 +944,13 @@ img {
 
 #contact-us .pop-button {
 	margin-top: 30px;
+	transition: all ease-in-out 0.5s;
 }
+
+#contact-us .pop-button:hover {
+	transform: scale(1.2);
+}
+
 
 #contact input {
   border-radius: 0px;
