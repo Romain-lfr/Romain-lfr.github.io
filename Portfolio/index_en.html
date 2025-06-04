@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lefranc Romain</title>
+        <meta name="description" content="Portfolio">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="css/lightbox.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="header">
+            <div class="container">
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                            <span class="sr-only">Toggle</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand scroll-top"><em>L</em>efranc <em>R</em>omain</a>
+                    </div>
+                    <!--/.navbar-header-->
+                    <div id="main-nav" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="scroll-top">Home</a></li>
+                            <li><a href="#" class="scroll-link" data-id="parcour">Parcours</a></li>
+                            <li><a href="#" class="scroll-link" data-id="about">Skill</a></li>
+                            <li><a href="#" class="scroll-link" data-id="blog">Projects</a></li>
+                            <li><a href="#" class="scroll-link" data-id="contact-us">Contact me</a></li>
+                        </ul>
+                        <div class="button r" id="button-3">
+                            <input type="checkbox" class="checkbox" />
+                            <div class="knobs"></div>
+                            <div class="layer"></div>
+                        </div>
+                    </div>
+                    <!--/.navbar-collapse-->
+                </nav>
+                <!--/.navbar-->
+            </div>
+            <!--/.container-->
+        </div>
+        
+    </header>
+    <main>
+        <div class="parallax-content baner-content" id="home">
+            <div class="container">
+                <div class="text-content">
+                    <h2><em>Portfolio</em><span> Lefranc</span> Romain</h2>
+                    <p>I'm a first-year BUT informatique student at the IUT in Lannion and I'm looking for a work-study position in IT and/or web development.</p>
+                    <div class="primary-button">
+                        <a href="#" class="scroll-link" data-id="parcour">Let's go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="parallax-content ton-content" id="parcour">
+            <div class="container">
+                <div class="col-md-4 text-end profile-box">
+                    <img src="img/0.jpg" alt="Photo de profil">
+                    <a href="/img/CV Lefranc Romain.pdf" class="btn btn-primary mt-2" download>Download CV</a>
+                </div>
+                <div class="col-md-8">
+                    <section class="design-section">
+                        <div class="timeline">
+                            <div class="timeline-empty">
+                            </div>
+                            <div class="timeline-middle">
+                                <div class="timeline-circle"></div>
+                            </div>
+                            <div class="timeline-component timeline-content">
+                                <h3>BUT Informatique</h3>
+                                <a href="https://iut-lannion.univ-rennes.fr/">IUT Lannion <br> 2024 - 2027</a>
+                            </div>
+                            <div class="timeline-component timeline-content">
+                                    <h3>BAC STI2D</h3>
+                                    <a href="https://lycee-brequigny.fr/">Lycée Bréquigny - Rennes 
+                                    <br> 2021 - 2024</a>
+                            </div>
+                            <div class="timeline-middle">
+                                <div class="timeline-circle"></div>
+                            </div>
+                            <div class="timeline-empty">
+                            </div>
+
+                            <div class="timeline-empty">
+                            </div>
+
+                            <div class="timeline-middle">
+                                <div class="timeline-circle"></div>
+                            </div>
+                            <div class=" timeline-component timeline-content">
+                                <h3>DNB - Collège</h3>
+                                <a href="https://www.collegejeanmonnet-janze.ac-rennes.fr/">Jean-Monnet - Janze 
+                                <br> 2017 - 2021</a>
+                            </div>
+                        </div> 
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <section id="about" class="page-section">
+            <div class="container">
+                <h1>Skills</h1>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp1')">
+                            <div class="icon">
+                                <img src="/img/web.png" alt="">
+                            </div>
+                            <h4>Web</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp2')">
+                            <div class="icon">
+                                <img src="img/model.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Layout</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp3')">
+                            <div class="icon">
+                                <img src="img/database.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Database</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp4')">
+                            <div class="icon">
+                                <img src="img/coding.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Development</h4>                       
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp5')">
+                            <div class="icon">
+                                <img src="img/communiations.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Communication</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp6')">
+                            <div class="icon">
+                                <img src="img/project-management.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Project management</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp7')">
+                            <div class="icon">
+                                <img src="img/teamwork.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Teamwork</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="service-item" onclick="openOverlay('comp8')">
+                            <div class="icon">
+                                <img src="img/autonomy.png" alt="" width="auto" height="60px">
+                            </div>
+                            <h4>Autonomous</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 1 -->
+            <div class="overlay" id="overlay-comp1">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp1')">&times;</span>
+                    <h2> Web interface development</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/jo.jpg" class="img_projet" alt="Image projet S1.02">
+                            <div class="projet-content">
+                                <h3>Creation of an Olympic Games 2024 website</h3>
+                                <p>Name of the project : JO 2024</p>
+                            </div>
+                        </div>
+
+                        <div class="comp-card-projet">
+                            <h2>Coming soon...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 2 -->
+            <div class="overlay" id="overlay-comp2">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp2')">&times;</span>
+                    <h2> Website design</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/jo.jpg" class="img_projet" alt="Image projet S1.02">
+                            <div class="projet-content">
+                                <h3>Design of an Olympic Games 2024 website</h3>
+                                <p>Name of the project : JO 2024</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <h2>Coming soon...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 3 -->
+            <div class="overlay" id="overlay-comp3">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp3')">&times;</span>
+                    <h2> Operating a database</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/Ligue_1.webp" class="img_projet" alt="Image projet Ligue 1">
+                            <div class="projet-content">
+                                <h3>Creation of a championship database</h3>
+                                <p>Name of the project : Ligue 1</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <h2>Coming soon...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 4 -->
+            <div class="overlay" id="overlay-comp4">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp4')">&times;</span>
+                    <h2> Software development</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/Snake.png" class="img_projet" alt="Image projet Snake">
+                            <div class="projet-content">
+                                <h3>Reproduction of the video game "Snake"</h3>
+                                <p>Name of the project : Snake</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <img src="./img/Snake_auto.webp" class="img_projet" alt="Image projet Snake Automatique">
+                            <div class="projet-content">
+                                <h3>Creating a stand-alone version of "Snake"</h3>
+                                <p>Name of the project : Snake Automatique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 5 -->
+            <div class="overlay" id="overlay-comp5">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp5')">&times;</span>
+                    <h2> Ability to listen actively and express yourself clearly</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/Ligue_1.webp" class="img_projet" alt="Image projet Ligue 1">
+                            <div class="projet-content">
+                                <h3>Creation of a championship database</h3>
+                                <p>Name of the project : Ligue 1</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <h2>Coming soon...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 6 -->
+            <div class="overlay" id="overlay-comp6">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp6')">&times;</span>
+                    <h2> Strategic planning and time management</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/danse.png" class="img_projet" alt="Image projet Ligue 1">
+                            <div class="projet-content">
+                                <h3>Planning a software project</h3>
+                                <p>Name of the project : EllaDanse</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <h2>Coming soon...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 7 -->
+            <div class="overlay" id="overlay-comp7">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp7')">&times;</span>
+                    <h2> Collaborative and attentive</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/Snake_auto.webp" class="img_projet" alt="Image projet Snake Automatique">
+                            <div class="projet-content">
+                                <h3>Creating a stand-alone version of "Snake"</h3>
+                                <p>Name of the project : Snake Automatique</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <img src="./img/jo.jpg" class="img_projet" alt="Image projet S1.02">
+                            <div class="projet-content">
+                                <h3>Creation of an Olympic Games 2024 website</h3>
+                                <p>Name of the project : JO 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay pour la  compétance 8 -->
+            <div class="overlay" id="overlay-comp8">
+                <div class="overlay-content">
+                    <span class="close-btn" onclick="closeOverlay('comp8')">&times;</span>
+                    <h2> Autonomous</h2>
+                    <div class="comp-cards">
+                        <div class="comp-card-projet">
+                            <img src="./img/Snake.png" class="img_projet" alt="Image projet Snake">
+                            <div class="projet-content">
+                                <h3>Reproduction of the video game "Snake"</h3>
+                                <p>Name of the project : Snake</p>
+                            </div>
+                        </div>
+                        <div class="comp-card-projet">
+                            <h2>Coming soon...</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about" class="gallery">
+            <div class="container">
+                <div class="row">
+                    <div class="gallery-filter">
+                        <span class="filter-item active" data-filter="all">all</span>
+                        <span class="filter-item" data-filter="web">Web</span>
+                        <span class="filter-item" data-filter="dev">Dev</span>
+                        <span class="filter-item" data-filter="bdd">Bdd</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="gallery-item dev">
+                        <div class="gallery-item-inner">
+                            <img src="./img/C.png" alt="Language C">
+                        </div>
+                    </div>
+                    <div class="gallery-item dev">
+                        <div class="gallery-item-inner">
+                            <img src="./img/Dev.png" alt="Java">
+                        </div>
+                    </div>
+                    <div class="gallery-item web">
+                        <div class="gallery-item-inner">
+                            <img src="./img/html.png" alt="Html">
+                        </div>
+                    </div>
+                    <div class="gallery-item dev">
+                        <div class="gallery-item-inner">
+                            <img src="./img/Python.png" alt="Python">
+                        </div>
+                    </div>
+                    <div class="gallery-item bdd">
+                        <div class="gallery-item-inner">
+                            <img src="./img/PostgreSQL.png" alt="PostgreSQL">
+                        </div>
+                    </div>
+                    <div class="gallery-item bdd">
+                        <div class="gallery-item-inner">
+                            <img src="./img/VisualParadigm.png" alt="Visual paradigm">
+                        </div>
+                    </div>
+                    <div class="gallery-item web">
+                        <div class="gallery-item-inner">
+                            <img src="./img/css.png" alt="css">
+                        </div>
+                    </div>
+                    <div class="gallery-item bdd">
+                        <div class="gallery-item-inner">
+                            <img src="./img/Bdd.png" alt="MySql">
+                        </div>
+                    </div>
+                    <div class="gallery-item web">
+                        <div class="gallery-item-inner">
+                            <img src="./img/JavaScript.png" alt="javascript">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="tabs-content" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="wrapper">
+                        <div class="col-md-4">
+                            <div class="section-heading">
+                                <h4>Project</h4>
+                                <div class="line-dec"></div>
+                                <p>Here are some of the projects I completed</p>
+                                <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                                    <li><a href="#tab1" class="active">Jo 2024</a></li>
+                                    <li><a href="#tab2">Snake</a></li>
+                                    <li><a href="#tab3">Snake Autonomous</a></li>
+                                    <li><a href="#tab4">Ligue 1</a></li>
+                                    <li><a href="#tab5">Ella Danse</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <section id="first-tab-group" class="tabgroup">
+                                <div id="tab1">
+                                    <img src="img/jo.jpg" alt="">
+                                    <div class="text-content">
+                                        <h4>Jo 2024</h4>
+                                        <span><a href="#">IUT Lannion</a> / <a href="#"> Lefranc Romain </a> / <a href="#"> December 2024 </a></span>
+                                        <p>Creation of a web page on judoka “Teddy riner” for the Jo 2024</p>
+                                    </div>
+                                </div>
+                                <div id="tab2">
+                                    <img src="img/Snake.png" alt="">
+                                    <div class="text-content">
+                                        <h4>Snake</h4>
+                                        <span><a href="#">IUT Lannion</a> / <a href="#"> Lefranc Romain </a> / <a href="#"> October 2024 </a></span>
+                                        <p>Reproduction of the famous video game “Snake” in Language C on the Linux Terminal</p>
+                                    </div>
+                                </div>
+                                <div id="tab3">
+                                    <img src="img/Snake_auto.webp" alt="">
+                                    <div class="text-content">
+                                        <h4>Snake Autonomous</h4>
+                                        <span><a href="#">IUT Lannion</a> / <a href="#">Lefranc Romain - Guillou Malo </a> / <a href="#"> January 2025 </a></span>
+                                        <p>Creation of a autonomous version of Snake, with the addition of a second snake</p>
+                                    </div>
+                                </div>
+                                <div id="tab4">
+                                    <img src="img/Ligue_1.webp" alt="">
+                                    <div class="text-content">
+                                        <h4>Ligue 1</h4>
+                                        <span><a href="#">IUT Lannion</a> / <a href="#">Lefranc Romain - Goujon Barthélemy </a> / <a href="#"> January 2025 </a></span>
+                                        <p>Creation of a database on the operation of a soccer championship</p>
+                                    </div>
+                                </div>
+                                <div id="tab5">
+                                    <img src="img/danse.png" alt="">
+                                    <div class="text-content">
+                                        <h4>EllaDanse</h4>
+                                        <span><a href="#">IUT Lannion</a> / <a href="#">Lefranc Romain - Guillou Malo - Le Garrec Evan</a> / <a href="#"> April 2025 </a></span>
+                                        <p>Drafting and calculation of objectives, deadline and budget for the successful programming of an application for the EllaDanse association.</p>
+                                    </div>
+                                </div>
+                                <!--
+                                <div id="tab5">
+                                    <img src="img/Ligue_1.webp" alt="">
+                                    <div class="text-content">
+                                        <h4>Ligue 1</h4>
+                                        <span><a href="#">IUT Lannion</a> / <a href="#">Lefranc Romain </a> / <a href="#"> Janvier 2025 </a></span>
+                                        <p>Réalisation d'une base données sur le fonctionement d'un Championnat de Foot</p>
+                                    </div>
+                                </div>
+                            -->
+                            </section>
+                        </div>
+                    </div>
+                    <div class="interet">
+                        <div class="tabulation present" data-target="centre1"><a>Sport</a></div>
+                        <div class="tabulation" data-target="centre2"><a>Music</a></div>
+                        <div class="tabulation" data-target="centre3"><a>Other</a></div>
+                    </div>
+
+                    <div id="centre1" class="centre present">
+                        <div class="photo">
+                            <img src="./img/bad.jpg" alt="Badminton">
+                            <div class="photo-title">Badminton</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/foot.jpg" alt="Football">
+                            <div class="photo-title">Football</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/volley.jpg" alt="volley">
+                            <div class="photo-title">Volley</div>
+                        </div>
+                    </div>
+
+                    <div id="centre2" class="centre">
+                        <div class="photo">
+                            <img src="./img/tsew_the_kid.jpg" alt="tsew the kid">
+                            <div class="photo-title">Tsew the kid</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/linkin_park.jpg" alt="Linkin Park">
+                            <div class="photo-title">Linkin Park</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/luther.jpg" alt="Luther">
+                            <div class="photo-title">Luther</div>
+                        </div>
+                    </div>
+
+                    <div id="centre3" class="centre">
+                        <div class="photo">
+                            <img src="./img/dune.jpg" alt="Film">
+                            <div class="photo-title">Film</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/jeux.jpg" alt="Video game">
+                            <div class="photo-title">Video game</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/mixologie.jpg" alt="mixology">
+                            <div class="photo-title">Mixology</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact-us">
+            <div class="container">
+                <div class="section-heading">
+                    <h4>Contact me</h4>
+                    <div class="pop-button">
+                        <h4>Send me a message</h4>
+                    </div>
+                </div>
+        
+                <div class="pop">
+                    <span>✖</span>
+                    <form id="contact" action="https://formspree.io/f/movepgbn" method="POST">
+                        <input name="name" type="text" placeholder="Your name..." required>
+                        <input name="email" type="email" placeholder="Your email..." required>
+                        <textarea name="message" rows="6" placeholder="Your message..." required></textarea>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.2347615919416!2d-3.4543869236654805!3d48.75831297131876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48122c034b5275af%3A0x355e62516b08c22f!2sIUT%20de%20Lannion%20-%20Universit%C3%A9%20de%20Rennes!5e0!3m2!1sen!2sfr!4v1746541838369!5m2!1sen!2sfr" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="logo">
+                        <a class="logo-ft scroll-top"><em>L</em>efranc <em>R</em>omain</a>
+                        <p>1st year student in Computer Science
+                       <br>IUT Lannion</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="location">
+                        <h4>Location</h4>
+                        <ul>
+                            <li>Rennes 35000</li>
+                            <li>Lannion 22300</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="contact-info">
+                        <h4>More Info</h4>
+                        <ul>
+                            <li><em>Phone</em>: 06 67 27 48 65</li>
+                            <li><em>Email</em>: lefranc.romain@outlook.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-15">
+                    <div class="connect-us">
+                        <h4>My Networks</h4>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/romain-lefranc-723712354/"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/Romain-lfr"><i class="fa fa-github"></i></a></li>
+                            <li><a href="http://https://romain-lfr.github.io"><i class="fa fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mail.js"></script>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const checkbox = document.querySelector(".checkbox");
+
+        // Ajoute une classe au body pour styliser selon la langue
+        if (window.location.href.includes("index_en.html")) {
+            document.body.classList.add("en");
+            checkbox.checked = true;
+        } else {
+            document.body.classList.remove("en");
+        }
+
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                window.location.href = "index_en.html";
+            } else {
+                window.location.href = "index.html";
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        // navigation click actions 
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        // scroll to top action
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');         
+        });
+        // mobile nav toggle
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+    // scroll function
+    function scrollToID(id, speed){
+        var offSet = 50;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+
+window.addEventListener("scroll", function () {
+            let scrollValue = window.scrollY;
+
+                document.querySelectorAll(".ink").forEach((stain, index) => {
+                    let directionX = (index % 2 === 0 ? 1 : -1);
+                    let directionY = (index % 3 === 0 ? -1 : 1);
+                    let speed = (index + 1) * 0.5;
+
+                    let moveX = scrollValue * 0.1 * directionX * speed;
+                    let moveY = scrollValue * 0.15 * directionY * speed;
+
+                    stain.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            });
+
+            window.addEventListener("scroll", function () {
+                const header = document.querySelector("header");
+                
+                if (window.scrollY > 50) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
+
+
+            function toggleRessource(card) {
+                card.classList.toggle('expanded');
+            }
+
+
+            function openOverlay(id) {
+                document.getElementById(`overlay-${id}`).style.display = 'flex';
+            }
+
+            function closeOverlay(id) {
+                document.getElementById(`overlay-${id}`).style.display = 'none';
+            }
+
+
+
+
+            /*animation*/
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const faders = document.querySelectorAll('.fade-in-section');
+
+                const appearOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px"
+                };
+
+                const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    });
+                }, appearOptions);
+
+                faders.forEach(fader => {
+                    appearOnScroll.observe(fader);
+                });
+            });
+
+            /* Centre d'interet */
+            const tabs = document.querySelectorAll('.tabulation');
+                const galleries = document.querySelectorAll('.centre');
+
+                tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('present'));
+                    tab.classList.add('present');
+
+                    // Afficher la bonne galerie
+                    const target = tab.getAttribute('data-target');
+                    galleries.forEach(gallery => {
+                    gallery.classList.remove('present');
+                    if (gallery.id === target) {
+                        gallery.classList.add('present');
+                    }
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
