@@ -427,7 +427,7 @@
                                 <div class="section-heading">
                                     <h4>Projets</h4>
                                     <div class="line-dec"></div>
-                                    <p>Voici différents projets que j'ai réalisés durant mes études</p>
+                                    <p>Voici différents projets que j'ai réalisés</p>
                                     <ul class="tabs clearfix" data-tabgroup="first-tab-group">
                                         <li><a href="#tab1" class="active">Jo 2024</a></li>
                                         <li><a href="#tab2">Snake</a></li>
@@ -475,17 +475,67 @@
                                         <img src="img/danse.png" alt="">
                                         <div class="text-content">
                                             <h4>EllaDanse</h4>
-                                            <span><a href="#">IUT Lannion</a> / <a href="#">Lefranc Romain - Guillou Malo - Le Garrec Evan</a> / <a href="#"> Janvier 2025 </a></span>
+                                            <span><a href="#">IUT Lannion</a> / <a href="#">Lefranc Romain - Guillou Malo - Le Garrec Evan</a> / <a href="#"> Avril 2025 </a></span>
                                             <p>Rédaction et calcul des objectifs, du délai et du budget pour mener à bien la programmation d'une application sur l'association EllaDanse</p>
                                         </div>
                                     </div>
                                 </section>
                             </div>
                         </div>
+                        
+                        <div class="interet">
+                            <div class="tabulation present" data-target="centre1"><a>Sport</a></div>
+                            <div class="tabulation" data-target="centre2"><a>Musique</a></div>
+                            <div class="tabulation" data-target="centre3"><a>Divers</a></div>
+                        </div>
+
+                        <div id="centre1" class="centre present">
+                            <div class="photo">
+                                <img src="./img/bad.jpg" alt="Badminton">
+                                <div class="photo-title">Badminton</div>
+                            </div>
+                            <div class="photo">
+                                <img src="./img/foot.jpg" alt="Football">
+                                <div class="photo-title">Football</div>
+                            </div>
+                            <div class="photo">
+                                <img src="./img/volley.jpg" alt="volley">
+                                <div class="photo-title">Volley</div>
+                            </div>
+                        </div>
+
+                        <div id="centre2" class="centre">
+                            <div class="photo">
+                                <img src="./img/tsew_the_kid.jpg" alt="tsew the kid">
+                                <div class="photo-title">Tsew the kid</div>
+                            </div>
+                            <div class="photo">
+                                <img src="./img/linkin_park.jpg" alt="Linkin Park">
+                                <div class="photo-title">Linkin Park</div>
+                            </div>
+                            <div class="photo">
+                                <img src="./img/luther.jpg" alt="Luther">
+                                <div class="photo-title">Luther</div>
+                            </div>
+                        </div>
+
+                        <div id="centre3" class="centre">
+                            <div class="photo">
+                                <img src="./img/dune.jpg" alt="Film">
+                                <div class="photo-title">Film</div>
+                            </div>
+                            <div class="photo">
+                                <img src="./img/jeux.jpg" alt="Jeux video">
+                                <div class="photo-title">Jeux video</div>
+                            </div>
+                            <div class="photo">
+                                <img src="./img/mixologie.jpg" alt="Mixologie">
+                                <div class="photo-title">Mixologie</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <!--
             <div class="car">
                 <div class="carousel">
@@ -582,16 +632,20 @@
             document.addEventListener("DOMContentLoaded", () => {
                 const checkbox = document.querySelector(".checkbox");
 
+                // Ajoute une classe au body pour styliser selon la langue
                 if (window.location.href.includes("index_en.html")) {
+                    document.body.classList.add("en");
                     checkbox.checked = true;
+                } else {
+                    document.body.classList.remove("en");
                 }
 
                 checkbox.addEventListener("change", () => {
-                if (checkbox.checked) {
-                    window.location.href = "index_en.html"; // page pour l'anglais
-                } else {
-                    window.location.href = "index.html"; // page pour le français
-                }
+                    if (checkbox.checked) {
+                        window.location.href = "index_en.html";
+                    } else {
+                        window.location.href = "index.html";
+                    }
                 });
             });
 
@@ -656,11 +710,9 @@
                 }
             });
 
-
             function toggleRessource(card) {
                 card.classList.toggle('expanded');
             }
-
 
             function openOverlay(id) {
                 document.getElementById(`overlay-${id}`).style.display = 'flex';
@@ -670,11 +722,7 @@
                 document.getElementById(`overlay-${id}`).style.display = 'none';
             }
 
-
-
-
             /*animation*/
-
             document.addEventListener("DOMContentLoaded", () => {
                 const faders = document.querySelectorAll('.fade-in-section');
 
@@ -693,6 +741,26 @@
 
                 faders.forEach(fader => {
                     appearOnScroll.observe(fader);
+                });
+            });
+
+            /* Centre d'interet */
+            const tabs = document.querySelectorAll('.tabulation');
+                const galleries = document.querySelectorAll('.centre');
+
+                tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('present'));
+                    tab.classList.add('present');
+
+                    // Afficher la bonne galerie
+                    const target = tab.getAttribute('data-target');
+                    galleries.forEach(gallery => {
+                    gallery.classList.remove('present');
+                    if (gallery.id === target) {
+                        gallery.classList.add('present');
+                    }
+                    });
                 });
             });
         </script>

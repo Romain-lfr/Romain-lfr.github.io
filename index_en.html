@@ -428,7 +428,7 @@
                             <div class="section-heading">
                                 <h4>Project</h4>
                                 <div class="line-dec"></div>
-                                <p>Here are some of the projects I completed during my studies</p>
+                                <p>Here are some of the projects I completed</p>
                                 <ul class="tabs clearfix" data-tabgroup="first-tab-group">
                                     <li><a href="#tab1" class="active">Jo 2024</a></li>
                                     <li><a href="#tab2">Snake</a></li>
@@ -491,6 +491,56 @@
                                 </div>
                             -->
                             </section>
+                        </div>
+                    </div>
+                    <div class="interet">
+                        <div class="tabulation present" data-target="centre1"><a>Sport</a></div>
+                        <div class="tabulation" data-target="centre2"><a>Music</a></div>
+                        <div class="tabulation" data-target="centre3"><a>Other</a></div>
+                    </div>
+
+                    <div id="centre1" class="centre present">
+                        <div class="photo">
+                            <img src="./img/bad.jpg" alt="Badminton">
+                            <div class="photo-title">Badminton</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/foot.jpg" alt="Football">
+                            <div class="photo-title">Football</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/volley.jpg" alt="volley">
+                            <div class="photo-title">Volley</div>
+                        </div>
+                    </div>
+
+                    <div id="centre2" class="centre">
+                        <div class="photo">
+                            <img src="./img/tsew_the_kid.jpg" alt="tsew the kid">
+                            <div class="photo-title">Tsew the kid</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/linkin_park.jpg" alt="Linkin Park">
+                            <div class="photo-title">Linkin Park</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/luther.jpg" alt="Luther">
+                            <div class="photo-title">Luther</div>
+                        </div>
+                    </div>
+
+                    <div id="centre3" class="centre">
+                        <div class="photo">
+                            <img src="./img/dune.jpg" alt="Film">
+                            <div class="photo-title">Film</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/jeux.jpg" alt="Video game">
+                            <div class="photo-title">Video game</div>
+                        </div>
+                        <div class="photo">
+                            <img src="./img/mixologie.jpg" alt="mixology">
+                            <div class="photo-title">Mixology</div>
                         </div>
                     </div>
                 </div>
@@ -580,16 +630,20 @@
     document.addEventListener("DOMContentLoaded", () => {
         const checkbox = document.querySelector(".checkbox");
 
+        // Ajoute une classe au body pour styliser selon la langue
         if (window.location.href.includes("index_en.html")) {
+            document.body.classList.add("en");
             checkbox.checked = true;
+        } else {
+            document.body.classList.remove("en");
         }
 
         checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-            window.location.href = "index_en.html"; // page pour l'anglais
-        } else {
-            window.location.href = "index.html"; // page pour le français
-        }
+            if (checkbox.checked) {
+                window.location.href = "index_en.html";
+            } else {
+                window.location.href = "index.html";
+            }
         });
     });
 
@@ -690,6 +744,26 @@ window.addEventListener("scroll", function () {
 
                 faders.forEach(fader => {
                     appearOnScroll.observe(fader);
+                });
+            });
+
+            /* Centre d'interet */
+            const tabs = document.querySelectorAll('.tabulation');
+                const galleries = document.querySelectorAll('.centre');
+
+                tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('present'));
+                    tab.classList.add('present');
+
+                    // Afficher la bonne galerie
+                    const target = tab.getAttribute('data-target');
+                    galleries.forEach(gallery => {
+                    gallery.classList.remove('present');
+                    if (gallery.id === target) {
+                        gallery.classList.add('present');
+                    }
+                    });
                 });
             });
     </script>
