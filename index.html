@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kristell Le Louarn — Psychopraticienne</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage:  { DEFAULT: '#7d9b7f', light: '#a8c2aa' },
+            clay:  { DEFAULT: '#b8956a', light: '#d4b48a' },
+            cream: { DEFAULT: '#f7f3ec' },
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans:  ['"DM Sans"', 'sans-serif'],
+          },
+          keyframes: {
+            morph: {
+              '0%,100%': { borderRadius: '62% 38% 46% 54% / 60% 44% 56% 40%' },
+              '33%':     { borderRadius: '45% 55% 65% 35% / 50% 60% 40% 50%' },
+              '66%':     { borderRadius: '55% 45% 35% 65% / 40% 55% 45% 60%' },
+            },
+          },
+          animation: { morph: 'morph 14s ease-in-out infinite' },
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    [v-cloak]    { display: none; }
+    .fade-in     { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    html         { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="font-sans bg-cream text-stone-800 overflow-x-hidden">
+<div id="app" v-cloak>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-cream/85 backdrop-blur-md border-b border-stone-200/50">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-5 flex justify-between items-center">
+      <div>
+        <span class="font-serif text-lg font-light tracking-wide text-stone-900">Kristell Le Louarn</span>
+        <span class="hidden sm:inline text-xs tracking-widest uppercase text-sage ml-3">Psychopraticienne</span>
+      </div>
+      <ul class="hidden md:flex gap-8 list-none">
+        <li v-for="l in nav" :key="l.id">
+          <a @click="go(l.id)" class="text-xs tracking-widest uppercase text-stone-400 hover:text-sage transition-colors cursor-pointer">{{ l.label }}</a>
+        </li>
+      </ul>
+      <a @click="go('contact')" class="bg-stone-900 text-cream text-xs tracking-widest uppercase px-4 py-3 hover:bg-sage transition-colors cursor-pointer">
+        Rendez-vous
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="min-h-screen grid md:grid-cols-2">
+    <!-- Gauche -->
+    <div class="flex flex-col justify-center pt-32 pb-16 px-8 md:px-14 lg:pl-48 lg:pr-0 mb-16">
+      <div class="flex items-center gap-3 text-sage text-xs tracking-widest uppercase mb-8">
+        <span class="w-7 h-px bg-sage inline-block"></span>
+        Psychopraticienne certifiée
+      </div>
+      <h1 class="font-serif font-light text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] mb-6 text-stone-900">
+        Un espace pour<br/>
+        <span class="italic text-sage">vous retrouver</span>
+      </h1>
+      <p class="text-stone-500 font-light leading-relaxed max-w-md mb-4">
+        J'accompagne les adultes et jeunes adultes dans un travail de psychothérapie individuelle, en cabinet ou en ligne.
+      </p>
+      <p class="text-stone-400 font-light text-sm leading-relaxed max-w-md mb-10">
+        Approche intégrative psychocorporelle — Relaxation · Psychanalyse jungienne · Gestalt-thérapie
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a @click="go('contact')" class="inline-flex items-center gap-2 bg-stone-900 text-cream text-xs tracking-widest uppercase px-6 py-4 hover:bg-sage transition-colors cursor-pointer">
+          Prendre rendez-vous →
+        </a>
+        <a @click="go('approche')" class="inline-flex items-center gap-2 border border-stone-300 text-stone-600 text-xs tracking-widest uppercase px-6 py-4 hover:border-sage hover:text-sage transition-colors cursor-pointer">
+          Mon approche
+        </a>
+      </div>
+
+      <!-- Badges disponibilités -->
+      <div class="flex flex-wrap gap-3 mt-10">
+        <span class="flex items-center gap-2 text-xs text-stone-500 bg-white border border-stone-200 px-3 py-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-sage inline-block"></span> Cabinet · En ligne
+        </span>
+        <span class="flex items-center gap-2 text-xs text-stone-500 bg-white border border-stone-200 px-3 py-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-clay inline-block"></span> Vendredi & Samedi
+        </span>
+        <span class="flex items-center gap-2 text-xs text-stone-500 bg-white border border-stone-200 px-3 py-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-stone-400 inline-block"></span> Accessible PMR
+        </span>
+      </div>
+    </div>
+
+    <!-- Droite -->
+    <div class="relative bg-stone-100 hidden md:flex flex-col items-center justify-center overflow-hidden gap-10">
+      <!-- Halo décoratif derrière la photo -->
+      <div class="absolute w-72 h-72 lg:w-96 lg:h-96 bg-gradient-to-br from-clay/20 via-sage/30 to-sage/10 animate-morph opacity-50 blur-2xl"></div>
+
+      <!-- Photo de profil ronde -->
+      <div class="relative z-10 flex flex-col items-center gap-6">
+        <div class="w-96 h-96 lg:w-[30rem] lg:h-[30rem] rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-sage/20">
+          <img src="img/kristell-2.jpg" alt="Kristell Le Louarn" class="w-full h-full object-cover object-top"/>
+        </div>
+        <div class="text-center">
+          <p class="font-serif text-xl text-stone-800 font-light">Kristell Le Louarn</p>
+          <p class="text-xs tracking-widest uppercase text-sage mt-1">Psychopraticienne certifiée</p>
+        </div>
+      </div>
+
+      <blockquote class="absolute bottom-10 left-8 right-8 font-serif italic text-base leading-relaxed text-stone-500 opacity-80 text-center z-10">
+        « J'accueille chacun·e sans jugement, dans un cadre sécurisant et bienveillant. »
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══ PRESTATIONS ═══ -->
+  <div id="prestations" class="bg-stone-900">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-24">
+      <div class="fade-in mb-14">
+        <p class="text-xs tracking-widest uppercase text-clay mb-3">Consultations</p>
+        <h2 class="font-serif font-light text-4xl lg:text-5xl text-cream">Comment je reçois</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-px bg-white/10">
+
+        <!-- Cabinet -->
+        <div class="bg-stone-900 p-10 hover:bg-white/5 transition-colors">
+          <div class="w-10 h-10 rounded-full border border-sage/40 flex items-center justify-center mb-7">
+            <svg class="w-5 h-5 text-sage/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 9.75L12 3l9 6.75V21H3V9.75z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 21V12h6v9"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl text-cream mb-3">En cabinet</h3>
+          <p class="text-white/45 font-light text-sm leading-relaxed mb-6">
+            Un espace physique dédié, confidentiel et sécurisant. La rencontre en présentiel permet un travail psychocorporel complet, intégrant la présence du corps dans la relation thérapeutique.
+          </p>
+          <p class="text-xs tracking-widest uppercase text-clay">Vendredi & Samedi sur rendez-vous</p>
+        </div>
+
+        <!-- En ligne -->
+        <div class="bg-stone-900 p-10 hover:bg-white/5 transition-colors">
+          <div class="w-10 h-10 rounded-full border border-clay/40 flex items-center justify-center mb-7">
+            <svg class="w-5 h-5 text-clay/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl text-cream mb-3">En ligne</h3>
+          <p class="text-white/45 font-light text-sm leading-relaxed mb-6">
+            La thérapie à distance, par visio, offre flexibilité et accessibilité sans compromis sur la qualité de l'accompagnement. Idéal pour celles et ceux qui ne peuvent se déplacer.
+          </p>
+          <p class="text-xs tracking-widest uppercase text-clay">Visioconférence · Même disponibilités</p>
+        </div>
+
+      </div>
+
+      <!-- Note accessibilité -->
+      <div class="mt-6 flex items-center gap-3 text-white/30 text-xs tracking-wide">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        Cabinet accessible aux personnes en situation de handicap
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ APPROCHE ═══ -->
+  <section id="approche" class="max-w-6xl mx-auto px-6 md:px-10 py-24">
+    <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+      <div class="fade-in">
+        <p class="text-xs tracking-widest uppercase text-clay mb-4">Mon approche</p>
+        <h2 class="font-serif font-light text-4xl lg:text-5xl leading-snug mb-8 text-stone-900">
+          Intégrative &<br/><span class="italic text-sage">psychocorporelle</span>
+        </h2>
+        <p class="text-stone-500 font-light leading-relaxed mb-4">
+          Mon approche est intégrative. Elle prend en compte à la fois le corps et l'esprit, en partant du principe que les deux sont indissociables dans le processus thérapeutique.
+        </p>
+        <p class="text-stone-500 font-light leading-relaxed mb-4">
+          Selon les besoins de chaque personne, j'adapte les méthodes utilisées. Il n'existe pas de chemin unique : chaque thérapie se construit au fil de la rencontre.
+        </p>
+        <p class="text-stone-500 font-light leading-relaxed">
+          J'attache une grande importance à la relation thérapeutique et au cadre dans lequel j'accompagne. La confiance et la sécurité sont les fondements de tout travail en profondeur.
+        </p>
+      </div>
+
+      <!-- Méthodes -->
+      <div class="fade-in flex flex-col gap-8">
+        <div v-for="m in methodes" :key="m.name" class="border-t border-stone-200 pt-8">
+          <div class="flex items-start gap-5">
+            <span class="font-serif text-2xl text-clay/50 font-light leading-none flex-shrink-0 pt-1">{{ m.num }}</span>
+            <div>
+              <h3 class="font-serif text-xl text-stone-800 mb-2">{{ m.name }}</h3>
+              <p class="text-sm text-stone-500 font-light leading-relaxed">{{ m.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PUBLIC ═══ -->
+  <div class="bg-stone-100">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-24">
+      <div class="fade-in text-center mb-14">
+        <p class="text-xs tracking-widest uppercase text-clay mb-3">Pour qui ?</p>
+        <h2 class="font-serif font-light text-4xl lg:text-5xl text-stone-900">J'accompagne</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-stone-200 fade-in">
+        <div v-for="p in publics" :key="p.title" class="bg-stone-100 p-8 text-center">
+          <div class="w-12 h-12 rounded-full bg-white border border-stone-200 mx-auto mb-5 flex items-center justify-center">
+            <span class="text-sage text-lg">{{ p.icon }}</span>
+          </div>
+          <h3 class="font-serif text-xl text-stone-800 mb-3">{{ p.title }}</h3>
+          <p class="text-sm text-stone-500 font-light leading-relaxed">{{ p.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="max-w-6xl mx-auto px-6 md:px-10 py-24">
+    <div class="grid md:grid-cols-2 gap-16 lg:gap-24">
+
+      <!-- Infos -->
+      <div class="fade-in">
+        <p class="text-xs tracking-widest uppercase text-clay mb-4">Contact</p>
+        <h2 class="font-serif font-light text-4xl lg:text-5xl leading-snug mb-8 text-stone-900">
+          Prendre<br/><span class="italic text-sage">rendez-vous</span>
+        </h2>
+        <p class="text-stone-500 font-light leading-relaxed mb-10">
+          N'hésitez pas à me contacter pour un premier échange. Je réponds dans les meilleurs délais pour convenir d'un rendez-vous.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div v-for="d in infos" :key="d.label" class="flex gap-5 items-start">
+            <span class="text-xs tracking-widest uppercase text-sage min-w-[90px] pt-0.5 flex-shrink-0">{{ d.label }}</span>
+            <span class="text-sm text-stone-600 font-light leading-relaxed" v-html="d.value"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="fade-in">
+        <div v-if="sent" class="flex flex-col items-start gap-5 py-16">
+          <div class="w-12 h-12 rounded-full bg-sage/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl text-stone-800">Message envoyé</h3>
+          <p class="text-stone-500 text-sm font-light leading-relaxed">Merci pour votre message. Je vous répondrai dans les meilleurs délais.</p>
+          <button @click="sent = false" class="text-xs tracking-widest uppercase text-sage hover:opacity-70 transition-opacity cursor-pointer">
+            Envoyer un autre message →
+          </button>
+        </div>
+
+        <form v-else @submit.prevent="send" class="flex flex-col gap-5">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-2">
+              <label class="text-xs tracking-widest uppercase text-stone-400">Prénom</label>
+              <input v-model="f.prenom" type="text" placeholder="Votre prénom"
+                class="bg-transparent border-b border-stone-200 pb-3 text-sm font-light text-stone-700 placeholder-stone-300 focus:outline-none focus:border-sage transition-colors w-full"/>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-xs tracking-widest uppercase text-stone-400">Nom</label>
+              <input v-model="f.nom" type="text" placeholder="Votre nom"
+                class="bg-transparent border-b border-stone-200 pb-3 text-sm font-light text-stone-700 placeholder-stone-300 focus:outline-none focus:border-sage transition-colors w-full"/>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-xs tracking-widest uppercase text-stone-400">Email</label>
+            <input v-model="f.email" type="email" placeholder="votre@email.com"
+              class="bg-transparent border-b border-stone-200 pb-3 text-sm font-light text-stone-700 placeholder-stone-300 focus:outline-none focus:border-sage transition-colors w-full"/>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-xs tracking-widest uppercase text-stone-400">Type de consultation souhaité</label>
+            <select v-model="f.type"
+              class="bg-transparent border-b border-stone-200 pb-3 text-sm font-light text-stone-700 focus:outline-none focus:border-sage transition-colors cursor-pointer w-full">
+              <option value="" disabled>Sélectionnez...</option>
+              <option class="bg-white text-stone-800">En cabinet</option>
+              <option class="bg-white text-stone-800">En ligne (visio)</option>
+              <option class="bg-white text-stone-800">Je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="text-xs tracking-widest uppercase text-stone-400">Message (optionnel)</label>
+            <textarea v-model="f.message" rows="3" placeholder="Ce qui vous amène, vos disponibilités..."
+              class="bg-transparent border-b border-stone-200 pb-3 text-sm font-light text-stone-700 placeholder-stone-300 focus:outline-none focus:border-sage transition-colors resize-none w-full"></textarea>
+          </div>
+          <button type="submit"
+            class="self-start flex items-center gap-2 bg-stone-900 text-cream text-xs tracking-widest uppercase px-6 py-4 hover:bg-sage transition-colors cursor-pointer mt-2">
+            Envoyer →
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-stone-900 text-white/25 text-center py-8 px-4 text-xs tracking-wider">
+    © 2024 Kristell Le Louarn — Psychopraticienne certifiée
+    <span class="text-clay/50 mx-2">·</span>
+    Consultations le vendredi & samedi
+    <span class="text-clay/50 mx-2">·</span>
+    Cabinet & en ligne
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
+<script>
+const { createApp, ref, onMounted } = Vue
+
+createApp({
+  setup() {
+    const sent = ref(false)
+    const f = ref({ prenom: '', nom: '', email: '', type: '', message: '' })
+
+    const nav = [
+      { id: 'prestations', label: 'Consultations' },
+      { id: 'approche',    label: 'Approche' },
+      { id: 'contact',     label: 'Contact' },
+    ]
+
+    const methodes = [
+      {
+        num: '01',
+        name: 'Relaxation',
+        desc: "Des techniques de détente corporelle et mentale pour apaiser le système nerveux, réduire l'anxiété et favoriser un ancrage dans le moment présent.",
+      },
+      {
+        num: '02',
+        name: 'Psychanalyse jungienne',
+        desc: "Exploration de l'inconscient, des symboles, des rêves et des archétypes pour mieux se connaître et comprendre les dynamiques profondes qui nous habitent.",
+      },
+      {
+        num: '03',
+        name: 'Gestalt-thérapie',
+        desc: "Une approche centrée sur l'ici et maintenant, la conscience de soi et la relation à l'autre, qui favorise l'expression authentique et la responsabilisation.",
+      },
+    ]
+
+    const publics = [
+      {
+        icon: '✦',
+        title: 'Adultes',
+        desc: "Traverser une période difficile, mieux se connaître, travailler sur des schémas répétitifs ou simplement avancer dans sa vie.",
+      },
+      {
+        icon: '◇',
+        title: 'Jeunes adultes',
+        desc: "Construire son identité, gérer les transitions de vie, les questionnements existentiels ou les premières grandes épreuves.",
+      },
+      {
+        icon: '○',
+        title: 'Toute demande',
+        desc: "Anxiété, deuil, relation à soi, burnout, mal-être diffus… Si quelque chose vous pèse, en parler est déjà un premier pas.",
+      },
+    ]
+
+    const infos = [
+      { label: 'Jours',     value: 'Vendredi & Samedi' },
+      { label: 'Format',    value: 'En cabinet · En ligne (visio)' },
+      { label: 'Accès',     value: 'Cabinet accessible aux personnes en situation de handicap' },
+    ]
+
+    function go(id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    function send() {
+      sent.value = true
+      f.value = { prenom: '', nom: '', email: '', type: '', message: '' }
+    }
+
+    onMounted(() => {
+      const obs = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+        { threshold: 0.1 }
+      )
+      document.querySelectorAll('.fade-in').forEach(el => obs.observe(el))
+    })
+
+    return { sent, f, nav, methodes, publics, infos, go, send }
+  }
+}).mount('#app')
+</script>
+</body>
+</html>
