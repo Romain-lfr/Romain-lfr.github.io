@@ -40,68 +40,95 @@
                 .nav-link, .nav-link::after { transition: none !important; }
             }
             nav {
-                background: rgba(30, 25, 20, 0.75);
-                opacity: 0.95;
                 position: sticky;
                 top: 0;
                 z-index: 50;
-                transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+                background: rgba(30, 25, 20, 0.4);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                transition: background 0.3s ease, backdrop-filter 0.3s ease;
             }
             nav.scrolled {
-                background: rgba(30, 25, 20, 0.75);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                border-bottom-color: rgba(255,255,255,0.1);
+                background: rgba(30, 25, 20, 0.85);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
             }
+
+            /* Menu mobile */
+            #menu { display: none; }
+            #menu.open { display: flex; }
         </style>
     </head>
     <body class="text-[#2a2520]">
 
-        <!-- Nav EN DEHORS de la section -->
-        <nav class="flex items-center justify-between px-10 py-6 border-b border-white/20">
-            <span class="font-display text-3xl font-semibold tracking-wide text-white">Kristell Le Louarn</span>
-            <ul class="flex gap-8 list-none">
-                <li><a href="#" class="nav-link text-s tracking-widest uppercase text-white">Accueil</a></li>
-                <li><a href="#moi" class="nav-link text-s tracking-widest uppercase text-white/90">Qui je suis</a></li>
-                <li><a href="#" class="nav-link text-s tracking-widest uppercase text-white/90">Pourquoi consulter</a></li>
-                <li><a href="#" class="nav-link text-s tracking-widest uppercase text-white/90">Mon approche</a></li>
-                <li><a href="#" class="nav-link text-s tracking-widest uppercase text-white/90">Contact</a></li>
+        <!-- Nav -->
+        <nav class="px-6 md:px-10 border-b border-white/20">
+            <div class="flex items-center justify-between py-5">
+                <span class="font-display text-2xl md:text-3xl font-semibold tracking-wide text-white">Kristell Le Louarn</span>
+
+                <!-- Liens desktop -->
+                <ul class="hidden md:flex gap-8 list-none">
+                    <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white">Accueil</a></li>
+                    <li><a href="#moi" class="nav-link text-xs tracking-widest uppercase text-white/90">Qui je suis</a></li>
+                    <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white/90">Pourquoi consulter</a></li>
+                    <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white/90">Mon approche</a></li>
+                    <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white/90">Contact</a></li>
+                </ul>
+
+                <!-- Burger mobile -->
+                <button id="burger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+                    <span class="w-6 h-px bg-white block transition-all"></span>
+                    <span class="w-6 h-px bg-white block transition-all"></span>
+                    <span class="w-6 h-px bg-white block transition-all"></span>
+                </button>
+            </div>
+
+            <!-- Menu mobile déroulant -->
+            <ul id="menu" class="flex-col gap-4 pb-6 list-none md:hidden">
+                <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white">Accueil</a></li>
+                <li><a href="#moi" class="nav-link text-xs tracking-widest uppercase text-white/90">Qui je suis</a></li>
+                <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white/90">Pourquoi consulter</a></li>
+                <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white/90">Mon approche</a></li>
+                <li><a href="#" class="nav-link text-xs tracking-widest uppercase text-white/90">Contact</a></li>
             </ul>
         </nav>
 
-        <!-- Section hero SANS la nav -->
+        <!-- Hero -->
         <section
             id="accueil"
             class="relative flex flex-col overflow-hidden"
-            style="height: calc(100vh - 81px); background-image: url('img/fond.webp'); background-size: cover; background-position: center;"
+            style="height: calc(100vh - 69px); background-image: url('img/fond.webp'); background-size: cover; background-position: center;"
         >
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/55"></div>
-            <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center text-[#faf7f2] px-4">
-                <p class="text-4xl tracking-[0.15em] uppercase font-semibold mb-4 opacity-90">Psychothérapie</p>
-                <h1 class="font-display text-8xl font-semibold tracking-wide mb-4 drop-shadow-md leading-tight">Kristell Le Louarn</h1>
-                <p class="font-display text-6xl font-semibold italic drop-shadow-sm mb-10">Adultes, jeunes adultes</p>
-                <div class="w-20 h-20 rounded-full bg-[#faf7f2]/90 flex items-center justify-center shadow-lg">
-                    <span class="font-display text-2xl italic font-semibold text-[#7a6a55]">kll</span>
+            <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center text-[#faf7f2] px-6">
+                <p class="text-xl md:text-3xl lg:text-4xl tracking-[0.15em] uppercase font-semibold mb-4 opacity-90">Psychothérapie</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-semibold tracking-wide mb-4 drop-shadow-md leading-tight">Kristell Le Louarn</h1>
+                <p class="font-display text-3xl md:text-5xl lg:text-6xl font-semibold italic drop-shadow-sm mb-10">Adultes, jeunes adultes</p>
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#faf7f2]/90 flex items-center justify-center shadow-lg">
+                    <span class="font-display text-xl md:text-2xl italic font-semibold text-[#7a6a55]">kll</span>
                 </div>
             </div>
         </section>
 
-        <section id="moi" class="min-h-screen grid md:grid-cols-2">
-            <div class="flex flex-col justify-center px-8 md:px-12 lg:px-16 py-16 bg-white">
-                <div class="flex items-center gap-3 text-xl tracking-widest uppercase mb-8 text-[#7a6a55]">
+        <!-- Section Qui je suis -->
+        <section id="moi" class="min-h-screen grid grid-cols-1 md:grid-cols-2">
+
+            <!-- Texte -->
+            <div class="flex flex-col justify-center px-6 md:px-12 lg:px-16 py-16 bg-white">
+                <div class="flex items-center gap-3 text-sm md:text-base tracking-widest uppercase mb-8 text-[#7a6a55]">
                     <span class="w-7 h-px bg-[#7a6a55] inline-block"></span>
                     Qui je suis
                 </div>
-                <div class="space-y-4 text-lg text-[#2a2520]/70 font-light leading-relaxed">
+                <div class="space-y-4 text-base md:text-lg text-[#2a2520]/70 font-light leading-relaxed">
                     <p>J'ai suivi pendant 4 ans le cursus de formation certifiante « Psychopraticien FF2P » de Savoir Psy, une école agréée par la Fédération française de psychothérapie et psychanalyse. J'exerce en cabinet en séance individuelle, avec une pratique supervisée.</p>
                     <p>La psychothérapie que je pratique est de type humaniste : authenticité, bienveillance, respect de la personne. Elle porte sur les sensations et les émotions, sur le <span class="italic">comment</span> plutôt que sur le <span class="italic">pourquoi</span>, et tend à accroître la conscience de soi dans l'ici et maintenant.</p>
                 </div>
                 <div class="mt-10 pt-8 border-t border-[#c8bfaa]">
-                    <div class="flex items-center gap-3 text-xl tracking-widest uppercase mb-6 text-[#7a6a55]">
+                    <div class="flex items-center gap-3 text-sm md:text-base tracking-widest uppercase mb-6 text-[#7a6a55]">
                         <span class="w-7 h-px bg-[#7a6a55] inline-block"></span>
                         Mon parcours
                     </div>
-                    <div class="space-y-4 text-lg text-[#2a2520]/70 font-light leading-relaxed">
+                    <div class="space-y-4 text-base md:text-lg text-[#2a2520]/70 font-light leading-relaxed">
                         <p>Après un parcours dans la traduction, le multimédia et l'ingénierie pédagogique en France et au Canada, j'ai choisi de me reconvertir pour pratiquer la psychothérapie avec une approche psychocorporelle.</p>
                         <p>Des épreuves de vie, une psychothérapie psychocorporelle et l'écoute de mon corps m'ont progressivement conduite à une évidence : aider les personnes qui souffrent à se connaître, à mettre du sens sur ce qu'elles traversent pour trouver un mieux-être et vivre pleinement leur vie.</p>
                         <p>Je travaille également dans une association auprès des personnes en situation de handicap afin de rompre l'isolement dans lequel elles se trouvent.</p>
@@ -109,24 +136,35 @@
                 </div>
             </div>
 
-            <div class="relative bg-[#f5f0e8] flex flex-col items-center justify-center overflow-hidden gap-10 py-16">
+            <!-- Photo -->
+            <div class="relative bg-[#f5f0e8] flex flex-col items-center justify-center overflow-hidden gap-8 py-16 px-6">
                 <div class="absolute w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-[#c8bfaa]/30 blur-3xl"></div>
                 <div class="relative z-10 flex flex-col items-center gap-6">
-                    <div class="w-72 h-72 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] rounded-full overflow-hidden border-4 border-[#faf7f2] shadow-xl ring-4 ring-[#c8bfaa]/40">
+                    <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-[#faf7f2] shadow-xl ring-4 ring-[#c8bfaa]/40">
                         <img src="img/kristell-2.jpg" alt="Kristell Le Louarn" class="w-full h-full object-cover object-top"/>
                     </div>
-                    <div class="text-center px-8">
-                        <p class="font-display text-4xl text-[#2a2520] font-light">Kristell Le Louarn</p>
-                        <p class="text-xl tracking-widest uppercase text-[#7a6a55] mt-3">Psychopraticienne humaniste <br> Retiers, près de Rennes</p>
+                    <div class="text-center px-4">
+                        <p class="font-display text-3xl md:text-4xl text-[#2a2520] font-light">Kristell Le Louarn</p>
+                        <p class="text-sm md:text-base tracking-widest uppercase text-[#7a6a55] mt-3">Psychopraticienne humaniste <br> Retiers, près de Rennes</p>
                     </div>
                 </div>
             </div>
+
         </section>
 
         <script>
             const nav = document.querySelector('nav');
             window.addEventListener('scroll', () => {
                 nav.classList.toggle('scrolled', window.scrollY > 60);
+            });
+
+            const burger = document.getElementById('burger');
+            const menu = document.getElementById('menu');
+            burger.addEventListener('click', () => {
+                menu.classList.toggle('open');
+            });
+            menu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => menu.classList.remove('open'));
             });
         </script>
     </body>
